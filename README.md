@@ -47,11 +47,15 @@ Projekt przedstawiający pełny cykl pracy z danymi w środowisku SaaS – od su
 
 ### Zrzuty ekranu z projektu:
 
+#### Podgląd raportu:
+
 <img width="1314" height="742" alt="zrzut_ekranu_przeglad_biznesu" src="https://github.com/user-attachments/assets/1f4df107-1b95-4678-9577-9b66f763a2d1" />
 
 <img width="1315" height="736" alt="zrzut_ekranu_analiza_klientow_i_odejsc" src="https://github.com/user-attachments/assets/5f4c2a89-ff5f-4151-a62d-06266cc4e837" />
 
 <img width="1312" height="737" alt="zrzut_ekranu_efektywnosc_platnosci" src="https://github.com/user-attachments/assets/835d193b-f365-4bcc-910c-d91aabac1fa2" />
+
+#### Model danych (relacje)
 
 <img width="1305" height="780" alt="zrzut_ekranu_relacje" src="https://github.com/user-attachments/assets/a6e5fc48-5157-4e79-86b4-53e2e8236d39" />
 
