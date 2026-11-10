@@ -41,6 +41,55 @@ Projekt przedstawiający pełny cykl pracy z danymi w środowisku SaaS – od su
 Suma wpływów za subskrypcje = 
 SUMX(fact_subscriptions, RELATED(dim_plans[monthly_price]))
 ```
+**Liczba aktywnych subskrybentów:**
+```dax
+Liczba aktywnych subskrybentów = 
+CALCULATE(DISTINCTCOUNT(fact_subscriptions[customer_id]), fact_subscriptions[event_type] <> "Cancellation")
+```
+**Liczba Płatności:**
+```dax
+Liczba Płatności = 
+COUNTROWS(fact_subscriptions)
+```
+**Liczba subskrybentów:**
+```dax
+Liczba subskrybentów = 
+DISTINCTCOUNT(fact_subscriptions[customer_id])
+```
+**Liczba zdarzeń dla event_type:**
+```dax
+Liczba zdarzeń dla event_type = 
+COUNTA(fact_subscriptions[event_type])
+```
+**Średni przychód na subskrybenta:**
+```dax
+Średni przychód na subskrybenta = 
+AVERAGEX(dim_customers, [Suma wpływów za subskrypcje])
+```
+**Wskaźnik błędnych płatności:**
+```dax
+Wskaźnik błędnych płatności = 
+VAR WszystkiePlatnosci = CALCULATE(COUNTROWS(fact_subscriptions), REMOVEFILTERS(fact_subscriptions[payment_status]))
+VAR PlatnosciBledne = CALCULATE(COUNTROWS(fact_subscriptions), fact_subscriptions[payment_status] = "Failed")
+RETURN
+DIVIDE(PlatnosciBledne, WszystkiePlatnosci, 0)
+```
+**Wskaźnik dokonanych płatności:**
+```dax
+Wskaźnik dokonanych płatności = 
+VAR WszystkiePlatnosci = CALCULATE(COUNTROWS(fact_subscriptions), REMOVEFILTERS(fact_subscriptions[payment_status]))
+VAR PlatnosciDokonane = CALCULATE(COUNTROWS(fact_subscriptions), fact_subscriptions[payment_status] = "Paid")
+RETURN
+DIVIDE(PlatnosciDokonane, WszystkiePlatnosci, 0)
+```
+**Wskaźnik odejść:**
+```dax
+Wskaźnik odejść = 
+VAR WszyscySubskrybenci = CALCULATE([Liczba subskrybentów], REMOVEFILTERS(fact_subscriptions[event_type]))
+VAR Odejscia = CALCULATE([Liczba subskrybentów], fact_subscriptions[event_type] = "Cancellation")
+RETURN
+IF(ISBLANK(DIVIDE(Odejscia, WszyscySubskrybenci, 0)), "Brak zdarzeń", DIVIDE(Odejscia, WszyscySubskrybenci, 0))
+```
 
 ## Zawartość repozytorium
 
