@@ -90,6 +90,26 @@ VAR Odejscia = CALCULATE([Liczba subskrybentów], fact_subscriptions[event_type]
 RETURN
 IF(ISBLANK(DIVIDE(Odejscia, WszyscySubskrybenci, 0)), "Brak zdarzeń", DIVIDE(Odejscia, WszyscySubskrybenci, 0))
 ```
+**Kalendarz:**
+```dax
+Kalendarz = 
+CALENDAR(MIN(fact_subscriptions[event_date]), MAX(fact_subscriptions[event_date]))
+```
+**Dni:**
+```dax
+Dni = 
+DAY(Kalendarz[Date])
+```
+**Miesiąc (nazwa):**
+```dax
+Miesiąc (nazwa) = 
+FORMAT(Kalendarz[Date], "mmmm")
+```
+**Miesiąc (nr):**
+```dax
+Miesiąc (nr) = 
+MONTH(Kalendarz[Date])
+```
 
 ## Zawartość repozytorium
 
