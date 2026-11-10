@@ -43,7 +43,6 @@ Projekt przedstawiający pełny cykl pracy z danymi w środowisku SaaS – od su
 `02_seed_data.sql`
 `03_star_schema.sql`
 `dashboard.pbix`
-`zrzut_ekranu.png`
 
 
 ### Zrzuty ekranu z projektu:
@@ -54,5 +53,6 @@ Projekt przedstawiający pełny cykl pracy z danymi w środowisku SaaS – od su
 
 <img width="1312" height="737" alt="zrzut_ekranu_efektywnosc_platnosci" src="https://github.com/user-attachments/assets/835d193b-f365-4bcc-910c-d91aabac1fa2" />
 
+<img width="1305" height="780" alt="zrzut_ekranu_relacje" src="https://github.com/user-attachments/assets/a6e5fc48-5157-4e79-86b4-53e2e8236d39" />
 
 
