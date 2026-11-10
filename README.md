@@ -27,12 +27,13 @@ Projekt przedstawiający pełny cykl pracy z danymi w środowisku SaaS – od su
 * Suma oraz średnia wpływów (ogólna i w podziale na plany cenowe).
 * Wykres osi czasu pokazujący realny trend napływu z uwzględnieniem niepełnych okresów rozliczeniowych.
 
-### Utworzone miary DAX:
-
-
 ### Strona 2: Analiza Klientów i Churnu
 * Monitorowanie wskaźnika odejść oraz struktury powodów rezygnacji.
 * Analiza zdarzeń w cyklu klienta (`New`, `Renewal`, `Cancellation`, `Upgrade`, `Downgrade`).
+
+### Strona 3: Efektywność Płatności
+* Analiza błędów przetwarzania płatności oraz popularności metod transakcyjnych (z dominacją kart kredytowych).
+* Wnioski dotyczące stabilności wpływów i retencji klientów.
 
 ### Utworzone miary DAX:
 **Suma wpływów za subskrypcje:**
@@ -40,15 +41,6 @@ Projekt przedstawiający pełny cykl pracy z danymi w środowisku SaaS – od su
 Suma wpływów za subskrypcje = 
 SUMX(fact_subscriptions, RELATED(dim_plans[monthly_price]))
 ```
-
-### Strona 3: Efektywność Płatności
-* Analiza błędów przetwarzania płatności oraz popularności metod transakcyjnych (z dominacją kart kredytowych).
-* Wnioski dotyczące stabilności wpływów i retencji klientów.
-
-### Utworzone miary DAX:
-
-
-
 
 ## Zawartość repozytorium
 
