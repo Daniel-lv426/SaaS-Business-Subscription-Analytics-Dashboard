@@ -13,7 +13,7 @@ Projekt przedstawiający pełny cykl pracy z danymi w środowisku SaaS – od su
 ## Architektura i przebieg projektu
 
 1. **Baza danych i skrypty SQL:**
-   W katalogu projektu znajdują się skrypty .sql (odpowiadające za strukturę, zasilenie i transformację danych w PostgreSQL – wzorowane na podejściu w stylu dbt).
+   W katalogu projektu znajdują się skrypty .sql odpowiadające za strukturę, zasilenie i transformację danych w PostgreSQL.
 2. **Modelowanie (Schemat Gwiazdy):**
    Dane zostały uporządkowane w architekturę opartą o schemat gwiazdy (tabela faktów oraz tabele wymiarów), a następnie wyeksportowane do plików CSV jako warstwa pośrednia.
 3. **Logika i DAX:**
